@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/login_reg.css')}}" />
+    <title>Enigmatik | Register/Login</title>
+</head>
+
+<body>
+    <header>
+        <!-- <h1>ENIGMATIK</h1> -->
+        <div class="header-name">
+            <div class="header-button"><span>E</span></div>
+            <div class="header-button"><span>N</span></div>
+            <div class="header-button"><span>I</span></div>
+            <div class="header-button"><span>G</span></div>
+            <div class="header-button"><span>M</span></div>
+            <div class="header-button"><span>A</span></div>
+            <div class="header-button"><span>T</span></div>
+            <div class="header-button"><span>I</span></div>
+            <div class="header-button"><span>K</span></div>
+        </div>
+        <a href="#">About</a>
+    </header>
+    <div class="forms-container">
+        <form class="register-form" action="/submit_registration" method="POST">
+            <h1 class="px-3 faded">Register</h1>
+            <div class="mb-2 px-3 faded">
+                {% for e in get_flashed_messages(category_filter="first_name") %}
+                    <p style="color: red; font-weight: bold;">{{e}}</p>
+                {% endfor %}
+                <label class="form-label">First Name</label>
+                <input type="text" name="first_name" class="form-control" />
+            </div>
+            <div class="mb-2 px-3 faded">
+                {% for e in get_flashed_messages(category_filter="last_name") %}
+                    <p style="color: red; font-weight: bold;">{{e}}</p>
+                {% endfor %}
+                <label class="form-label">Last Name</label>
+                <input type="text" name="last_name" class="form-control" />
+            </div>
+            <div class="mb-2 px-3 faded">
+                {% for e in get_flashed_messages(category_filter="email") %}
+                    <p style="color: red; font-weight: bold;">{{e}}</p>
+                {% endfor %}
+                {% for e in get_flashed_messages(category_filter="exists") %}
+                    <p style="color: red; font-weight: bold;">{{e}}</p>
+                {% endfor %}
+                <label class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" />
+            </div>
+            <div class="mb-2 px-3 faded">
+                {% for e in get_flashed_messages(category_filter="password") %}
+                    <p style="color: red; font-weight: bold;">{{e}}</p>
+                {% endfor %}
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control"  />
+            </div>
+            <div class="mb-2 px-3 faded">
+                {% for e in get_flashed_messages(category_filter="confirm") %}
+                    <p style="color: red; font-weight: bold;">{{e}}</p>
+                {% endfor %}
+                <label class="form-label">Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control"  />
+            </div>
+            <button type="submit" class="btn"><img src="/static/imgs/design/submit_stamp_black.png" alt="submit button"></button>
+        </form>
+        <form class="register-form" action="/submit_login" method="POST">
+            <h1 class="px-3 faded">Login</h1>
+            <div class="mb-2 px-3 faded">
+                {% for e in get_flashed_messages(category_filter="login") %}
+                    <p style="color: red; font-weight: bold;">{{e}}</p>
+                {% endfor %}
+                <label class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" />
+            </div>
+            <div class="mb-2 px-3 faded">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control"  />
+            </div>
+            <button type="submit" class="btn"><img src="/static/imgs/design/submit_stamp_black.png" alt="submit button"></button>
+        </form>
+    </div>
+</body>
+
+</html>

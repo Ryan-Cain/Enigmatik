@@ -1,0 +1,112 @@
+@font-face {
+    font-family: SpecialElite;
+    src: url('/static/fonts/SpecialElite.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: SpecialElite;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('/static/imgs/design/wallpaper.jpg');
+    background-attachment: fixed;
+}
+
+.forms-container {
+    display: flex;
+}
+
+form {
+    padding: 20px 10px 0px 10px;
+    background-image: url('/static/imgs/design/parched_light.png');
+    background-size: cover;
+    width: 465px;
+    color: black;
+    font-weight: bold;
+    height: fit-content;
+}
+
+.register-form {
+    margin-right: 75px;
+    display: flex;
+    flex-direction: column;
+}
+.faded {
+    opacity: .9;
+    color: rgb(35, 33, 33);
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    padding: 25px 25px 0 25px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.header-button {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 50%; */
+    color: white;
+    font-size: 30px;
+    background-image: url('/static/imgs/design/button.png');
+    background-size: contain;
+}
+
+.header-name {
+    display: flex;
+}
+
+.header-button p {
+    padding: 0;
+}
+
+input[type="text"],
+input[type="text"]:focus,  
+input[type="email"],
+input[type="email"]:focus,  
+input[type="password"],
+input[type="password"]:focus  
+{
+    background-color: transparent;
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+
+button img {
+    height: 50px;
+    padding-bottom: 0px;
+}
+
+
+button:focus {
+    border: 0px;
+}
+button:focus img {
+    height: 60px;
+    padding-bottom: 0px;
+}
+

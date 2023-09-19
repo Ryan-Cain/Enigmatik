@@ -1,0 +1,111 @@
+@font-face {
+    font-family: SpecialElite;
+    src: url('/static/fonts/SpecialElite.ttf');
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: SpecialElite;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('/static/imgs/design/wallpaper.jpg');
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    padding: 25px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    padding: 25px 25px 0 25px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.header-button {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 50%; */
+    color: white;
+    font-size: 30px;
+    background-image: url('/static/imgs/design/button.png');
+    background-size: contain;
+}
+
+.header-name {
+    display: flex;
+}
+
+.header-button p {
+    padding: 0;
+}
+
+
+/* Enigma Settings */
+.enigma-settings {
+    color: white;
+    background-image: url('/static/imgs/design/black_plastic2.jpg');
+    background-size: cover;
+    border-radius: 15px;
+}
+.plugboard p {
+    padding: 5px;
+    margin: 0;
+}
+
+.rotor-wheel {
+    height: 150px;
+}
+
+.key-row input {
+    padding: 10px 35px;
+    margin: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.keys-container p {
+    margin-right: 25px;
+}
+.rotor-panel {
+    position: relative;
+}
+
+.rotor-panel img {
+    height: 125px;
+}
+
+.rotor-panel .rotor-initial {
+    position: absolute;
+    font-size: larger;
+    font-weight: bolder;
+    color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+}

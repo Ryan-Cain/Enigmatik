@@ -1,0 +1,166 @@
+@font-face {
+    font-family: SpecialElite;
+    src: url('/static/fonts/SpecialElite.ttf');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: SpecialElite;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url('/static/imgs/design/wallpaper.jpg');
+    background-attachment: fixed;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    padding: 25px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    color: white;
+    padding: 25px 25px 0 25px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.header-button {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 50%; */
+    color: white;
+    font-size: 30px;
+    background-image: url('/static/imgs/design/button.png');
+    background-size: contain;
+}
+
+.header-name {
+    display: flex;
+}
+
+.header-button p {
+    padding: 0;
+}
+
+.notebook {
+    position: relative;
+}
+/* .notebook img {
+    position: absolute;
+    top: 50px;
+} */
+
+main {
+    margin-top: 45px;
+}
+
+/* About */
+.about-content {
+    background-image: url('/static/imgs/design/postcard04.jpg');
+    background-size: cover;
+    height: 500px;
+    border-radius: 12px;
+}
+
+.about-content img {
+    height: 250px;
+    margin-top: 10px;
+    margin-left: 25px;
+    rotate: -2deg;
+    display: block;
+}
+
+.about-left p {
+    padding: 20px;
+}
+
+.about-right {
+    
+}
+
+
+.title-bar {
+    font-size: 20px;
+    color: black;
+}
+
+/* .container {
+    margin-top: 50px;
+} */
+
+
+/* Friends */
+.friend-stamp img {
+    height: 40px;
+}
+#collected {
+    height: 360px;
+    overflow-y: scroll;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.list-friends::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .list-friends {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.stamps {
+    background-image: url('/static/imgs/design/cork-board.jpg');
+    background-size: cover;
+    height: 500px;
+    padding: 20px 0 0 55px;
+}
+.friend-stamp {
+    background-image: url('/static/imgs/design/stamp.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 7px;
+}
+.collected p {
+    margin-bottom: 0;
+}
+
+
+/* Card */
+.card {
+    background-image: url(/static/imgs/design/card.jpg);
+    background-size: cover;
+}
+.message {
+    /* overflow-wrap: anywhere; */
+    word-break: break-all;
+}
+
+.messages {
+    margin-top: 45px;
+}
+

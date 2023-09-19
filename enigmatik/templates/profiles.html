@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/profiles.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap_test.css')}}" />
+    <title>Enigmatik | Dashboard</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-name">
+            <div class="header-button"><span>E</span></div>
+            <div class="header-button"><span>N</span></div>
+            <div class="header-button"><span>I</span></div>
+            <div class="header-button"><span>G</span></div>
+            <div class="header-button"><span>M</span></div>
+            <div class="header-button"><span>A</span></div>
+            <div class="header-button"><span>T</span></div>
+            <div class="header-button"><span>I</span></div>
+            <div class="header-button"><span>K</span></div>
+        </div>
+        <div class="links">
+            <a href="/messages">Messages</a>
+            <a href="/profiles">Profiles</a>
+            <a href="#">About</a>
+            <a href="/logout">Logout</a>
+            <a href="#"><img src="/static/imgs/design/settings_wheel.png" alt="settings wheel"></a>
+        </div>
+    </header>
+
+
+
+    <!-- Main body content -->
+    <main class="container">
+        <div class="row notebook">
+            <div class="about col-5">
+
+
+                <!-- About  -->
+                <div class="about-content container">
+                    <div class="row p-2 title-bar d-flex">
+                        <p class="col-2 px-5">About</p>
+                        <p class="col mx-5">Ryan Cain is your friend</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-8 about-left">
+                            <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                alt="">
+                            <p>I like to code, and I like cryptography, so I am excited to be able to join the community
+                                here to share in the fun of secret communication!!</p>
+                        </div>
+                        <div class="col about-right d-flex flex-column justify-content-center">
+                            <p class="fw-bold">Name:</p>
+                            <p>Ryan Cain</p>
+                            <p class="fw-bold">Enlisted On:</p>
+                            <p>May, 2023</p>
+                            <p class="fw-bold">Transmissions sent:</p>
+                            <p>14</p>
+                            <p class="fw-bold">Allies:</p>
+                            <p>3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friends -->
+            <div class="about col">
+                <div class="stamps container">
+                    <div class="row p-2 title-bar d-flex">
+                        <p>Ryan's Friend Stamps</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 collected">
+                            <p>Collected</p>
+                            <div class="container">
+                                <div id="collected" class="row list-friends">
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walshwerwre</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                    <div class="col-4 friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col requests d-flex flex-column justify-content-between">
+                            <div class="incoming">
+                                <p>Incoming</p>
+                                <div class="list-friends">
+                                    <div class="col friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="outgoing">
+                                <p>Outgoing</p>
+                                <div class="list-friends">
+                                    <div class="friend-stamp">
+                                        <img src="https://www.kindpng.com/picc/m/72-727254_black-and-white-profile-pic-asian-hd-png.png"
+                                            alt="">
+                                        <p>Bryan Walsh</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        </div>
+    </main>
+
+    <div class="container messages">
+        
+        <div class="row">
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger"></h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">
+                        OPCUL XVBLH JSIBY VNTYD GQTSC XGGRO CLTHW LJJHL WPXTX AR</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about something secret so dont ask
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger"></h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">
+                        OPCUL XVBLH JSIBY VNTYD GQTSC XGGRO CLTHW LJJHL WPXTX AR</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about something secret so dont ask
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger"></h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">
+                        OPCUL XVBLH JSIBY VNTYD GQTSC XGGRO CLTHW LJJHL WPXTX AR</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about something secret so dont ask
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger"></h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">
+                        OPCUL XVBLH JSIBY VNTYD GQTSC XGGRO CLTHW LJJHL WPXTX AR</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 card">
+                <div class="card-body">
+                    <h2 class="fs-4">
+                        This message is about something secret so dont ask
+                    </h2 >
+                    <div class="d-flex justify-content-between">
+                        <p>Operator: Ryan Cain</p>
+                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
+                    </div>
+                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
+                        lajd wueb atwj dhsf louv jvxc jfid iyrn
+                        odjc sleu shdv lsid flsl odos</p>
+                    <div>
+                        <p><span>4</span> comments</p>
+                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
+                    </div>
+                </div>
+            </div>
+
+                      
+            
+            
+        </div>
+    </div>
+
+
+
+    <script src="/static/js/charScramble.js"></script>
+</body>
+
+</html>
