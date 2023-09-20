@@ -1,3 +1,10 @@
+const friendModalButton = document.getElementById("friend-modal-btn");
+
+function openFriendModal() {
+  friendModalButton.click();
+  console.log("this ran");
+}
+
 // document.querySelector("h1").onmouseover = (event) => {
 //   let iteration = 0;
 

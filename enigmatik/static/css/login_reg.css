@@ -12,9 +12,11 @@
 
 
 body {
+    height: 100vh;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
     background-image: url('/static/imgs/design/wallpaper.jpg');
     background-attachment: fixed;
@@ -32,6 +34,10 @@ form {
     color: black;
     font-weight: bold;
     height: fit-content;
+}
+.form-control {
+    margin: 0;
+    padding: 0 0 0 15px;
 }
 
 .register-form {
@@ -110,3 +116,14 @@ button:focus img {
     padding-bottom: 0px;
 }
 
+.orange-couch {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    height: 35%;
+}
+
+.form-line {
+    width: 75%;
+}

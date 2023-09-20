@@ -11,7 +11,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='/css/read_message.css')}}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/create_message.css')}}" />
     <title>Enigmatik | Read Message</title>
 </head>
 
@@ -52,33 +52,33 @@
                 </div>
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
-                        <select name="rotor" id="">
-                            <option value="1">I</option>
-                            <option value="2">II</option>
-                            <option value="3">III</option>
-                            <option value="4">IV</option>
-                            <option value="5">V</option>
+                        <select class="rotor-order-value" name="rotor" id="rotor-position-1">
+                            <option value="I" selected>I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
                         </select>
                     </div>
                     <div class="rotor d-flex flex-column">
-                        <input class="rotor-btn1" type="button">
+                        <input class="rotor-btn1" type="button" onclick="incrementInitial(this)">
                         <div class="d-flex align-items-center">
                             <div class="rotor-panel">
-                                <p class="rotor-initial">B</p>
+                                <p class="rotor-initial" data-position=1>B</p>
                                 <img src="/static/imgs/enigma-board/rotor-panel1.png" alt="rotor">
                             </div>
-                            <img class="rotor-wheel" src="/static/imgs/design/rotor4.png" alt="rotor">
+                            <img class="rotor-wheel" src="/static/imgs/enigma-board/rotorstep1.png" alt="rotor">
                         </div>
-                        <input class="rotor-btn2" type="button">
+                        <input class="rotor-btn2" type="button"  onclick="decrementInitial(this)">
                     </div>
                     <div class="ring">
-                        <select name="ring-position" id="">
+                        <select class="ring-position" name="ring-position" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                            <option value="6">6</option>
+                            <option value="6" selected>6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
                             <option value="9">9</option>
@@ -104,28 +104,28 @@
                 </div>
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
-                        <select name="rotor" id="">
-                            <option value="1">I</option>
-                            <option value="2">II</option>
-                            <option value="3">III</option>
-                            <option value="4">IV</option>
-                            <option value="5">V</option>
+                        <select class="rotor-order-value" name="rotor" id="">
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III" selected>III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
                         </select>
                     </div>
                     <div class="rotor d-flex flex-column">
-                        <input class="rotor-btn1" type="button">
+                        <input class="rotor-btn1" type="button" onclick="incrementInitial(this)">
                         <div class="d-flex align-items-center">
                             <div class="rotor-panel">
-                                <p class="rotor-initial">Q</p>
+                                <p class="rotor-initial" data-position=1>B</p>
                                 <img src="/static/imgs/enigma-board/rotor-panel2.png" alt="rotor">
                             </div>
-                            <img class="rotor-wheel" src="/static/imgs/design/rotor4.png" alt="rotor">
+                            <img class="rotor-wheel" src="/static/imgs/enigma-board/rotorstep1.png" alt="rotor">
                         </div>
-                        <input class="rotor-btn2" type="button">
+                        <input class="rotor-btn2" type="button"  onclick="decrementInitial(this)">
                     </div>
                     <div class="ring">
-                        <select name="ring-position" id="">
-                            <option value="1">1</option>
+                        <select class="ring-position" name="ring-position" id="">
+                            <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -156,28 +156,28 @@
                 </div>
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
-                        <select name="rotor" id="">
-                            <option value="1">I</option>
-                            <option value="2">II</option>
-                            <option value="3">III</option>
-                            <option value="4">IV</option>
-                            <option value="5">V</option>
+                        <select class="rotor-order-value" name="rotor" id="">
+                            <option value="I">I</option>
+                            <option value="II" selected>II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
                         </select>
                     </div>
                     <div class="rotor d-flex flex-column">
-                        <input class="rotor-btn1" type="button">
+                        <input class="rotor-btn1" type="button" onclick="incrementInitial(this)">
                         <div class="d-flex align-items-center">
                             <div class="rotor-panel">
-                                <p class="rotor-initial">L</p>
+                                <p class="rotor-initial" data-position=1>B</p>
                                 <img src="/static/imgs/enigma-board/rotor-panel3.png" alt="rotor">
                             </div>
-                            <img class="rotor-wheel" src="/static/imgs/design/rotor4.png" alt="rotor">
+                            <img class="rotor-wheel" src="/static/imgs/enigma-board/rotorstep1.png" alt="rotor">
                         </div>
-                        <input class="rotor-btn2" type="button">
+                        <input class="rotor-btn2" type="button"  onclick="decrementInitial(this)">
                     </div>
                     <div class="ring">
                         <!-- <img src="/static/imgs/enigma-board/bottom-plate.png" alt="bottom-plate"> -->
-                        <select name="ring-position" id="">
+                        <select class="ring-position" name="ring-position" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -187,7 +187,7 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                             <option value="9">9</option>
-                            <option value="10">10</option>
+                            <option value="10" selected>10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
                             <option value="13">13</option>
@@ -255,9 +255,22 @@
         </div>
 
         <!-- Encrypted Message / Comments -->
-        <div class="encrypted-message_comments container">
+        <form class="encrypted-message_comments container" action="/submit_message" method="POST">
             <div class="encrypted-message row">
-                <div class="encrypted col">
+                <div class="decrypted col d-flex flex-column">
+                    <!-- <h2>Decrypted</h2> -->
+                    <h2>Transmission</h2>
+                    <div class="message">
+                        <label for="title">Title:</label>
+                        <input class="title title-left" type="text" name="title" placeholder="enter title here..."></input>
+                        <p class="break"></p>
+                        <label for="message">Message:</label>
+                        <input class="message-text" type="text" name="message" placeholder="enter message here..."></input>
+                        
+                    </div>
+                    <!-- <button class="btn align-self-end me-3"><img src="/static/imgs/design/decrypt_stamp.png" alt=""></button> -->
+                </div>
+                <!-- <div class="encrypted col">
                     <h2>Encrypted</h2>
                     <div class="message">
                         <h3 class="title">TDEI VOMD SLOG DKGL</h3>
@@ -271,42 +284,72 @@
                             <p>Transmitted On: <span>June, 5 2023 5:24PM</span></p>
                         </div>
                     </div>
-                </div>
-                <div class="decrypted col d-flex flex-column">
-                    <h2>Decrypted</h2>
-                    <div class="message">
-                        <h3 class="title">This is about something</h3>
-                        <p>THIS IS A MESSAGE THAT GOES OUT TO WHOEVER WANTS TO READ IT
-                            I HOPE THAT YOU ARE HAVING A NICE DAY
-                        </p>
-                    </div>
-                    <button class="btn align-self-end me-3"><img src="/static/imgs/design/decrypt_stamp.png" alt=""></button>
-                </div>
+                </div> -->
             </div>
-            <div class="comment-section">
+            <div class="settings-full">
                 <img src="/static/imgs/design/divide_pen.png" alt="">
-                <h2>Comments</h2>
-                <div class="comments">
-                    <div class="comment">
-                        <p>By: <span class="commentor">Stephanie Cain</span></p>
-                        <p>I love this message!!</p>
-                        <p>Transmitted On: <span>June 8, 2023 9:35AM</span></p>
+                <h2>Settings</h2>
+                <div class="settings container">
+                    <div class="row">
+                        <div class="col d-flex">
+                            <p class="pe-3">Viewed by: </p>
+                            <label>Friends</label>
+                            <input type="radio" name="viewed_by" id="freinds" value="friends" checked>
+                            <label>Private</label>
+                            <input type="radio" name="viewed_by" id="private" value="private">
+                        </div>
+                        <div class="col d-flex">
+                            <p class="pe-3">Encrypt Title: </p>
+                            <label>Yes</label>
+                            <input type="radio" name="encrypt_title" id="yes" value="yes" checked>
+                            <label>No</label>
+                            <input type="radio" name="encrypt_title" id="no" value="no">
+                        </div>
                     </div>
-                    
-                    <div class="comment">
-                        <p>By: <span class="commentor">Stephanie Cain</span></p>
-                        <p>I love this message!!</p>
-                        <p>Transmitted On: <span>June 8, 2023 9:35AM</span></p>
-                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-start">
+                            <p class="pe-4">Add friend</p>
+                            <p class="pe-4">Stephanie</p>
+                            <input type="hidden" name="private_friends" value="">
+                        </div>
+
+                    </div> 
+                    <div class="row">
+                        <div class="col d-flex flex-column">
+                            <p class="pe-4">Enigma setup (write this down on paper)</p>
+                            <p class="pe-4">
+                                <span>Rotor order: <span>V I III</span> / </span>
+                                <input type="hidden" id="rotor-order-values" name="rotor_order" value="">
+                                <span>Initial position: <span>B Q L</span> / </span>
+                                <input type="hidden" id="initial-position-values" name="initial_position" value="">
+                                <span>Rings: <span>5 2 18</span> / </span>
+                                <input type="hidden" id="ring-values" name="rings" value="">
+                                <span>Key swap pairs: <span>AP, BS, DE, RT, AP, BS, DE, RT, AP, BS</span></span>
+                                <input type="hidden" id="key-swap-values" name="key_swap_pairs" value="">
+                            </p>
+                        </div>
+                        <div class="col d-flex">
+                            <p class="pe-3">Setup written down? </p>
+                            <label>Yes</label>
+                            <input type="checkbox" name="setup_written_down" id="yes" value="yes">
+                        </div>
+                        <div class="col">
+                            <button id="form-submit-btn" type="submit">Hidden button</button>
+                            <button onclick="pullPanelSettings()">Click for form fillout</button>
+                        </div>
+                        
+                    </div> 
+                   
                     
                 </div>
             </div>
-        </div>
+        </form>
     </main>
 
 
 
 
+    <script src="/static/js/enigmaPanel.js"></script>
     <script src="/static/js/charScramble.js"></script>
 </body>
 

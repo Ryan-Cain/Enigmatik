@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" /> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/profiles.css')}}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='/css/bootstrap_test.css')}}" />
     <title>Enigmatik | Dashboard</title>
@@ -39,6 +39,9 @@
 
 
 
+
+
+
     <!-- Main body content -->
     <main class="container">
         <div class="row notebook">
@@ -49,7 +52,7 @@
                 <div class="about-content container">
                     <div class="row p-2 title-bar d-flex">
                         <p class="col-2 px-5">About</p>
-                        <p class="col mx-5">Ryan Cain is your friend</p>
+                        <p class="col mx-5">Ryan Cain is a friendly</p>
                     </div>
                     <div class="row">
                         <div class="col-8 about-left">
@@ -65,7 +68,7 @@
                             <p>May, 2023</p>
                             <p class="fw-bold">Transmissions sent:</p>
                             <p>14</p>
-                            <p class="fw-bold">Allies:</p>
+                            <p class="fw-bold">Friendlies:</p>
                             <p>3</p>
                         </div>
                     </div>
@@ -77,6 +80,7 @@
                 <div class="stamps container">
                     <div class="row p-2 title-bar d-flex">
                         <p>Ryan's Friend Stamps</p>
+                        <button onclick="openFriendModal()">Search Friendlies</button>
                     </div>
                     <div class="row">
                         <div class="col-6 collected">
@@ -478,7 +482,7 @@
     </div>
 
 
-
+    <!-- <script src="/static/js/script.js"></script> -->
     <script src="/static/js/charScramble.js"></script>
 </body>
 

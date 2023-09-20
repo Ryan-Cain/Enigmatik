@@ -134,7 +134,7 @@ main {
   }
 
 .stamps {
-    background-image: url('/static/imgs/design/cork-board.jpg');
+    background-image: url('/static/imgs/design/paper-texture-1.jpg');
     background-size: cover;
     height: 500px;
     padding: 20px 0 0 55px;
@@ -152,7 +152,7 @@ main {
 
 /* Card */
 .card {
-    background-image: url(/static/imgs/design/card.jpg);
+    background-image: url('/static/imgs/design/card.jpg');
     background-size: cover;
 }
 .message {
