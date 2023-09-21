@@ -212,41 +212,42 @@
             <div class="plugboard col d-flex flex-column justify-content-around align-items-center">
                 <p class="rm-p">Plugboard can switch up to 10 letters</p>
                 <div class="keys-container d-flex justify-content-center align-items-center">
+                    <input type="hidden" id="open_pair" value=false>
                     <div class="keys-only d-flex flex-column align-items-center">
                         <div class="key-row d-flex justify-content-center">
                             <!-- <button value="a">A</button> -->
-                            <input type="button" value="A">
-                            <input type="button" value="B">
-                            <input type="button" value="C">
-                            <input type="button" value="D">
-                            <input type="button" value="E">
-                            <input type="button" value="F">
+                            <input type="button" data-color="null" value="A" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="B" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="C" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="D" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="E" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="F" onclick="keyPairs(this)">
                         </div>
                         <div class="key-row d-flex justify-content-center">
-                            <input type="button" value="G">
-                            <input type="button" value="H">
-                            <input type="button" value="I">
-                            <input type="button" value="J">
-                            <input type="button" value="K">
-                            <input type="button" value="L">
-                            <input type="button" value="M">
+                            <input type="button" data-color="null" value="G" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="H" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="I" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="J" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="K" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="L" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="M" onclick="keyPairs(this)">
                         </div>
                         <div class="key-row d-flex justify-content-center">
-                            <input type="button" value="N">
-                            <input type="button" value="O">
-                            <input type="button" value="P">
-                            <input type="button" value="Q">
-                            <input type="button" value="R">
-                            <input type="button" value="S">
+                            <input type="button" data-color="null" value="N" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="O" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="P" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="Q" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="R" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="S" onclick="keyPairs(this)">
                         </div>
                         <div class="key-row d-flex justify-content-center">
-                            <input type="button" value="T">
-                            <input type="button" value="U">
-                            <input type="button" value="V">
-                            <input type="button" value="W">
-                            <input type="button" value="X">
-                            <input type="button" value="Y">
-                            <input type="button" value="Z">
+                            <input type="button" data-color="null" value="T" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="U" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="V" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="W" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="X" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="Y" onclick="keyPairs(this)">
+                            <input type="button" data-color="null" value="Z" onclick="keyPairs(this)">
                         </div>
                     </div>
                 </div>
@@ -301,7 +302,7 @@
                         <div class="col d-flex">
                             <p class="pe-3">Encrypt Title: </p>
                             <label>Yes</label>
-                            <input type="radio" name="encrypt_title" id="yes" value="yes" checked>
+                            <input type="radio" name="encrypt_title" id="yes" value="1" checked>
                             <label>No</label>
                             <input type="radio" name="encrypt_title" id="no" value="no">
                         </div>
@@ -334,8 +335,8 @@
                             <input type="checkbox" name="setup_written_down" id="yes" value="yes">
                         </div>
                         <div class="col">
-                            <button id="form-submit-btn" type="submit">Hidden button</button>
-                            <button onclick="pullPanelSettings()">Click for form fillout</button>
+                            <button id="form-submit-btn" class="visually-hidden" type="submit">Hidden button</button>
+                            <button onclick="pullPanelSettings()">Send Transmission</button>
                         </div>
                         
                     </div> 

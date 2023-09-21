@@ -75,19 +75,19 @@
             </div>
             <button type="submit" class="btn"><img src="/static/imgs/design/submit_stamp_black.png" alt="submit button"></button>
         </form>
-        <form class="register-form" action="/submit_login" method="POST">
+        <form class="login-form" action="/submit_login" method="POST">
             <h1 class="px-3 faded">Login</h1>
             <div class="mb-2 px-3 faded">
                 {% for e in get_flashed_messages(category_filter="login") %}
                 <p style="color: red; font-weight: bold;">{{e}}</p>
                 {% endfor %}
                 <label class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" />
+                <input type="email" name="email" class="form-control no-autofill" />
                 <img class="form-line" src="/static/imgs/design/form_line.png" alt="pen line">
             </div>
             <div class="mb-2 px-3 faded">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control"  />
+                <input type="password" name="password" class="form-control no-autofill"  />
                 <img class="form-line" src="/static/imgs/design/form_line.png" alt="pen line">
             </div>
             <button type="submit" class="btn"><img src="/static/imgs/design/submit_stamp_black.png" alt="submit button"></button>
