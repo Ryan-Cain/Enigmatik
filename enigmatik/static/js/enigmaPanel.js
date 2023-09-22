@@ -30,20 +30,31 @@ function pullPanelSettings() {
   const keyPairString = pullKeyPairs();
 
   const rotorOrder = document.getElementById("rotor-order-values");
+  const rotorOrderDOM = document.getElementById("rotor-order-values-dom");
   rotorOrder.value = rotorSettingsString;
+  rotorOrderDOM.innerText = rotorSettingsString;
 
   const initialPosition = document.getElementById("initial-position-values");
+  const initialPositionDOM = document.getElementById(
+    "initial-position-values-dom"
+  );
   initialPosition.value = initialPositionsString;
+  initialPositionDOM.innerText = initialPositionsString;
 
   const ringPosition = document.getElementById("ring-values");
+  const ringPositionDOM = document.getElementById("ring-values-dom");
   ringPosition.value = ringPositionsString;
+  ringPositionDOM.innerText = ringPositionsString;
 
   const keyPairs = document.getElementById("key-swap-values");
+  const keyPairsDOM = document.getElementById("key-swap-values-dom");
+  const keyPairsDOM2 = document.getElementById("key-swap-values-dom2");
   keyPairs.value = keyPairString;
+  keyPairsDOM.innerText = keyPairString;
+  keyPairsDOM2.innerText = keyPairString;
 
-  console.log(rotorSettingsString, initialPositionsString, ringPositionsString);
   const submitBtn = document.getElementById("form-submit-btn");
-  submitBtn.click();
+  // submitBtn.click();
 }
 
 function pullKeyPairs() {
@@ -52,12 +63,12 @@ function pullKeyPairs() {
   const colorKeys = {
     blue: "",
     green: "",
-    yellow: "",
+    orange: "",
     red: "",
     brown: "",
     purple: "",
     darkgoldenrod: "",
-    grey: "",
+    darkgrey: "",
     pink: "",
     lightseagreen: "",
   };
@@ -89,6 +100,7 @@ function incrementInitial(elem) {
   }
   const picNumber = rotor.dataset.position % 4;
   rotorImg.src = "/static/imgs/enigma-board/rotorstep" + picNumber + ".png";
+  pullPanelSettings();
 }
 
 function decrementInitial(elem) {
@@ -104,20 +116,22 @@ function decrementInitial(elem) {
   }
   const picNumber = rotor.dataset.position % 4;
   rotorImg.src = "/static/imgs/enigma-board/rotorstep" + picNumber + ".png";
+  pullPanelSettings();
 }
 
 function keyPairs(elem) {
   const keyboard = document.querySelector(".keys-only");
+  // const allKeys = Array.from(keyboard.querySelectorAll("input"));
   const allKeys = keyboard.querySelectorAll("input");
   const allColors = [
     "blue",
     "green",
-    "yellow",
+    "orange",
     "red",
     "brown",
     "purple",
     "darkgoldenrod",
-    "grey",
+    "darkgrey",
     "pink",
     "lightseagreen",
   ];
@@ -126,12 +140,12 @@ function keyPairs(elem) {
   let colorCount = {
     blue: 0,
     green: 0,
-    yellow: 0,
+    orange: 0,
     red: 0,
     brown: 0,
     purple: 0,
     darkgoldenrod: 0,
-    grey: 0,
+    darkgrey: 0,
     pink: 0,
     lightseagreen: 0,
   };
@@ -144,22 +158,28 @@ function keyPairs(elem) {
       " on function click"
   );
 
+  console.log(typeof elem.dataset.color);
   // if a color is clicked that is not blank, all keys with that color will be made blank
-  if (elem.dataset.color != "null") {
+  if (elem.dataset.color) {
+    const elementColor = elem.dataset.color;
     allKeys.forEach((key) => {
-      if (key.dataset.color == elem.dataset.color) {
-        key.dataset.color = "null";
+      console.log(
+        "key.dataset.color is " + key.dataset.color,
+        "elem.dataset.color " + elem.dataset.color,
+        "element color is " + elementColor
+      );
+      if (key.dataset.color && key.dataset.color == elementColor) {
+        console.log("toast");
+        key.dataset.color = null;
         key.style.border = "3px solid black";
         key.style.color = "black";
-        colorCount[elem.dataset.color] = 0;
       }
     });
   }
-  // loops over keys and counts current colors used
   allKeys.forEach((key) => {
-    colorCount[key.dataset.color]++;
+    const color = key.dataset.color;
+    if (color) colorCount[key.dataset.color]++;
   });
-  console.log(colorCount);
 
   // goes through full ordered color list and if color isnt being used for two keys, then it is added to the available colors array
   allColors.forEach((color) => {
@@ -170,16 +190,45 @@ function keyPairs(elem) {
   console.log("available colors are ", availableColors);
 
   // make latest key press have the first available color in the available color array
-  if (availableColors.length > 0) {
-    elem.dataset.color = availableColors[0];
-    elem.style.border = `3px solid ${availableColors[0]}`;
-    elem.style.color = `${availableColors[0]}`;
-    console.log(
-      "key '" +
-        elem.value +
-        "' color is " +
-        elem.dataset.color +
-        " on function end"
-    );
-  }
+  // if (availableColors.length > 0) {
+  elem.dataset.color = availableColors[0];
+  elem.style.border = `3px solid ${availableColors[0]}`;
+  elem.style.color = `${availableColors[0]}`;
+  console.log(
+    "key '" +
+      elem.value +
+      "' color is " +
+      elem.dataset.color +
+      " on function end"
+  );
+  // }
+  // loops over keys and counts current colors used
+  allKeys.forEach((key) => {
+    const color = key.dataset.color;
+    if (color) colorCount[key.dataset.color]++;
+  });
+  console.log(colorCount);
+  pullPanelSettings();
+}
+
+// hide enigma panel if the message isnt private
+function hideEnigmaPanel() {
+  const enigmaPanel = document.getElementById("enigma-panel");
+  const enigmaSettingsNote = document.getElementById("enigma-settings-note");
+  enigmaPanel.classList.add("d-none");
+  enigmaSettingsNote.classList.remove("d-none");
+}
+// show enigma panel if the message is private
+function showEnigmaPanel() {
+  const enigmaPanel = document.getElementById("enigma-panel");
+  const enigmaSettingsNote = document.getElementById("enigma-settings-note");
+  enigmaPanel.classList.remove("d-none");
+  enigmaSettingsNote.classList.remove("d-none");
+}
+
+// click submit button outside of form
+function submitForm() {
+  const submitBtn = document.getElementById("form-submit-btn");
+  pullPanelSettings();
+  submitBtn.click();
 }

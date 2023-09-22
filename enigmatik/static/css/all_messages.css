@@ -2,7 +2,10 @@
     font-family: SpecialElite;
     src: url('/static/fonts/SpecialElite.ttf');
 }
-
+@font-face {
+    font-family: ImpactLabelReversed;
+    src: url('/static/fonts/ImpactLabelReversed-nDMR.ttf');
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -70,11 +73,35 @@ header a {
 
 /* Card */
 .card {
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+}
+.card-body {
     background-image: url(/static/imgs/design/card.jpg);
     background-size: cover;
-    padding: 10px;
 }
 .message {
     /* overflow-wrap: anywhere; */
     word-break: break-all;
+}
+.create-message, .links {
+    background-image: url('/static/imgs/design/black_plastic2.jpg');
+    font-family: ImpactLabelReversed;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+.links a {
+    font-family: ImpactLabelReversed;
+    padding: 10px 20px;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.card-body a {
+    color: black;
 }

@@ -67,17 +67,17 @@ header a {
     padding: 0;
 }
 .links {
-    font-family: ImpactLabelReversed;
-    /* background-image: url('/static/imgs/design/links-plate.png'); */
+    background-image: url('/static/imgs/design/black_plastic2.jpg');
     background-color: rgb(127, 132, 135);
     padding: 5px;
     border-radius: 5px;
 }
 .links a {
-    /* color: rgb(225, 229, 232); */
-    color: white;
+    font-family: ImpactLabelReversed;
+    padding: 10px 20px;
     font-size: 24px;
-    font-weight: bolder;
+    color: white;
+    text-decoration: none;
 }
 
 /* Enigma Settings */

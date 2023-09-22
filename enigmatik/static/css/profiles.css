@@ -2,7 +2,10 @@
     font-family: SpecialElite;
     src: url('/static/fonts/SpecialElite.ttf');
 }
-
+@font-face {
+    font-family: ImpactLabelReversed;
+    src: url('/static/fonts/ImpactLabelReversed-nDMR.ttf');
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -163,4 +166,12 @@ main {
 .messages {
     margin-top: 45px;
 }
-
+.create-message {
+    background-image: url('/static/imgs/design/black_plastic2.jpg');
+    font-family: ImpactLabelReversed;
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}

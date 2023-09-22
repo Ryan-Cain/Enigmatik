@@ -40,8 +40,8 @@ def submit_login():
         return redirect('/')
     
     session['user_id'] = user.id
+    print('session id is ', session['user_id'])
     session['first_name'] = user.first_name
-    print("successfully logged in")
     return redirect('/messages')
 
 
@@ -60,4 +60,5 @@ def logout():
 # profile routes
 @app.route('/profiles')
 def user_profile():
+    # return render_template('profiles.html', user_posts=user_posts)
     return render_template('profiles.html')

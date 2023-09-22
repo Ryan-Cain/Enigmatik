@@ -15,7 +15,7 @@
     <title>Enigmatik | Read Message</title>
 </head>
 
-<body>
+<body onload="descramblerTitle(),descramblerMessage() ">
 
     <!-- Header -->
     <header>
@@ -31,11 +31,11 @@
             <div class="header-button"><span>K</span></div>
         </div>
         <div class="links">
-            <a href="#">Messages</a>
+            <a href="/messages">Messages</a>
             <a href="/profiles">Profiles</a>
-            <a href="#">About</a>
+            <!-- <a href="#">About</a> -->
             <a href="/logout">Logout</a>
-            <a href="#"><img src="/static/imgs/design/settings_wheel.png" alt="settings wheel"></a>
+            <!-- <a href="#"><img src="/static/imgs/design/settings_wheel.png" alt="settings wheel"></a> -->
         </div>
     </header>
 
@@ -43,7 +43,8 @@
 
     <!-- Main body content -->
     <main class="container">
-        <div class="enigma-settings row d-flex justify-content-between">
+        {% if post.viewed_by == 0%}
+        <div id="enigma-panel" class="enigma-settings row d-flex justify-content-between mb-4">
             <div class="rotors d-flex col-4">
                 <div class="rotor-setting-name d-flex flex-column justify-content-between">
                     <p>Rotor Order</p>
@@ -52,33 +53,33 @@
                 </div>
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
-                        <select name="rotor" id="">
-                            <option value="1">I</option>
-                            <option value="2">II</option>
-                            <option value="3">III</option>
-                            <option value="4">IV</option>
-                            <option value="5">V</option>
+                        <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="rotor-position-1">
+                            <option value="I" selected>I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
                         </select>
                     </div>
                     <div class="rotor d-flex flex-column">
-                        <input class="rotor-btn1" type="button">
+                        <input class="rotor-btn1" type="button" onclick="incrementInitial(this)">
                         <div class="d-flex align-items-center">
                             <div class="rotor-panel">
-                                <p class="rotor-initial">B</p>
+                                <p class="rotor-initial" data-position=1>B</p>
                                 <img src="/static/imgs/enigma-board/rotor-panel1.png" alt="rotor">
                             </div>
-                            <img class="rotor-wheel" src="/static/imgs/design/rotor4.png" alt="rotor">
+                            <img class="rotor-wheel" src="/static/imgs/enigma-board/rotorstep1.png" alt="rotor">
                         </div>
-                        <input class="rotor-btn2" type="button">
+                        <input class="rotor-btn2" type="button"  onclick="decrementInitial(this)">
                     </div>
                     <div class="ring">
-                        <select name="ring-position" id="">
+                        <select onchange="pullPanelSettings()" class="ring-position" name="ring-position" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                            <option value="6">6</option>
+                            <option value="6" selected>6</option>
                             <option value="7">7</option>
                             <option value="8">8</option>
                             <option value="9">9</option>
@@ -104,28 +105,28 @@
                 </div>
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
-                        <select name="rotor" id="">
-                            <option value="1">I</option>
-                            <option value="2">II</option>
-                            <option value="3">III</option>
-                            <option value="4">IV</option>
-                            <option value="5">V</option>
+                        <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="">
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III" selected>III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
                         </select>
                     </div>
                     <div class="rotor d-flex flex-column">
-                        <input class="rotor-btn1" type="button">
+                        <input class="rotor-btn1" type="button" onclick="incrementInitial(this)">
                         <div class="d-flex align-items-center">
                             <div class="rotor-panel">
-                                <p class="rotor-initial">Q</p>
+                                <p class="rotor-initial" data-position=1>B</p>
                                 <img src="/static/imgs/enigma-board/rotor-panel2.png" alt="rotor">
                             </div>
-                            <img class="rotor-wheel" src="/static/imgs/design/rotor4.png" alt="rotor">
+                            <img class="rotor-wheel" src="/static/imgs/enigma-board/rotorstep1.png" alt="rotor">
                         </div>
-                        <input class="rotor-btn2" type="button">
+                        <input class="rotor-btn2" type="button"  onclick="decrementInitial(this)">
                     </div>
                     <div class="ring">
-                        <select name="ring-position" id="">
-                            <option value="1">1</option>
+                        <select onchange="pullPanelSettings()" class="ring-position" name="ring-position" id="">
+                            <option value="1" selected>1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
@@ -156,28 +157,28 @@
                 </div>
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
-                        <select name="rotor" id="">
-                            <option value="1">I</option>
-                            <option value="2">II</option>
-                            <option value="3">III</option>
-                            <option value="4">IV</option>
-                            <option value="5">V</option>
+                        <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="">
+                            <option value="I">I</option>
+                            <option value="II" selected>II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
                         </select>
                     </div>
                     <div class="rotor d-flex flex-column">
-                        <input class="rotor-btn1" type="button">
+                        <input class="rotor-btn1" type="button" onclick="incrementInitial(this)">
                         <div class="d-flex align-items-center">
                             <div class="rotor-panel">
-                                <p class="rotor-initial">L</p>
+                                <p class="rotor-initial" data-position=1>B</p>
                                 <img src="/static/imgs/enigma-board/rotor-panel3.png" alt="rotor">
                             </div>
-                            <img class="rotor-wheel" src="/static/imgs/design/rotor4.png" alt="rotor">
+                            <img class="rotor-wheel" src="/static/imgs/enigma-board/rotorstep1.png" alt="rotor">
                         </div>
-                        <input class="rotor-btn2" type="button">
+                        <input class="rotor-btn2" type="button"  onclick="decrementInitial(this)">
                     </div>
                     <div class="ring">
                         <!-- <img src="/static/imgs/enigma-board/bottom-plate.png" alt="bottom-plate"> -->
-                        <select name="ring-position" id="">
+                        <select onchange="pullPanelSettings()" class="ring-position" name="ring-position" id="">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -187,7 +188,7 @@
                             <option value="7">7</option>
                             <option value="8">8</option>
                             <option value="9">9</option>
-                            <option value="10">10</option>
+                            <option value="10" selected>10</option>
                             <option value="11">11</option>
                             <option value="12">12</option>
                             <option value="13">13</option>
@@ -212,47 +213,50 @@
             <div class="plugboard col d-flex flex-column justify-content-around align-items-center">
                 <p class="rm-p">Plugboard can switch up to 10 letters</p>
                 <div class="keys-container d-flex justify-content-center align-items-center">
+                    <input type="hidden" id="open_pair" value=false>
                     <div class="keys-only d-flex flex-column align-items-center">
                         <div class="key-row d-flex justify-content-center">
                             <!-- <button value="a">A</button> -->
-                            <input type="button" value="A">
-                            <input type="button" value="B">
-                            <input type="button" value="C">
-                            <input type="button" value="D">
-                            <input type="button" value="E">
-                            <input type="button" value="F">
+                            <input type="button" data-color="" value="A" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="B" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="C" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="D" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="E" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="F" onclick="keyPairs(this)">
                         </div>
                         <div class="key-row d-flex justify-content-center">
-                            <input type="button" value="G">
-                            <input type="button" value="H">
-                            <input type="button" value="I">
-                            <input type="button" value="J">
-                            <input type="button" value="K">
-                            <input type="button" value="L">
-                            <input type="button" value="M">
+                            <input type="button" data-color="" value="G" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="H" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="I" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="J" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="K" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="L" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="M" onclick="keyPairs(this)">
                         </div>
                         <div class="key-row d-flex justify-content-center">
-                            <input type="button" value="N">
-                            <input type="button" value="O">
-                            <input type="button" value="P">
-                            <input type="button" value="Q">
-                            <input type="button" value="R">
-                            <input type="button" value="S">
+                            <input type="button" data-color="" value="N" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="O" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="P" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="Q" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="R" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="S" onclick="keyPairs(this)">
                         </div>
                         <div class="key-row d-flex justify-content-center">
-                            <input type="button" value="T">
-                            <input type="button" value="U">
-                            <input type="button" value="V">
-                            <input type="button" value="W">
-                            <input type="button" value="X">
-                            <input type="button" value="Y">
-                            <input type="button" value="Z">
+                            <input type="button" data-color="" value="T" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="U" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="V" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="W" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="X" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="Y" onclick="keyPairs(this)">
+                            <input type="button" data-color="" value="Z" onclick="keyPairs(this)">
                         </div>
                     </div>
                 </div>
-                <P>Key swap pairs (<span>AP, BX, DE, RT</span>)</P>
+                <p>Key swap pairs (<span id="key-swap-values-dom2"></span>)</p>
             </div>
         </div>
+        {% endif %}
+
 
         <!-- Encrypted Message / Comments -->
         <div class="encrypted-message_comments container">
@@ -260,29 +264,76 @@
                 <div class="encrypted col">
                     <h2>Encrypted</h2>
                     <div class="message">
-                        <h3 class="title">TDEI VOMD SLOG DKGL</h3>
-                        <p>SKDJ KSJF LSLD KFJF SLDK JFJDK LSLD
-                            SKDJ KSJF LSLD KFJF SLDK JFJDK LSLD
-                            SKDJ KSJF LSLD KFJF SLDK JFJDK LSLD
-                            SKDJ KSJF LSLD KFJF SLDK JFJDK LSLD
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <p>Operator: Ryan Cain</p>
-                            <p>Transmitted On: <span>June, 5 2023 5:24PM</span></p>
+                        {% if decrypted %}
+                        <h3 class="title">{{decrypted.encrypted.encrypted_title}}</h3>
+                        <p>{{decrypted.encrypted.encrypted_message}}</p>
+                        <!-- <div class="d-flex justify-content-between"> -->
+                            <div class="pt-5">
+                                <p class="m-0">Operator: {{post.user.first_name}} {{post.user.last_name}}</p>
+                                <p>Transmitted On: <span>{{post.created_at}}</span></p>
+                            </div>
+                            
+                            {% else %}
+                            <h3 class="title">{{post.encrypted_title}}</h3>
+                            <p>{{post.encrypted_message}}</p>
+                            <!-- <div class="d-flex justify-content-between"> -->
+                                <div class="pt-5">
+                                    <p class="m-0">Operator: {{post.user.first_name}} {{post.user.last_name}}</p>
+                                    <p>Transmitted On: <span>{{post.created_at}}</span></p>
+                                </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="decrypted col d-flex flex-column justify-content-between">
+                    <div>
+                        <h2>Decrypted</h2>
+                        <div class="message">
+                            {% if not decrypted %}
+                            <h3 class="title">{{post.encrypted_title}}</h3>
+                            <p>{{post.encrypted_message}}</p>
+                            {% endif %}
+                            {% if decrypted %}
+                            <h3 id="decr-title" class="title">{{decrypted.decrypted.decrypted_title}}</h3>
+                            <p id="decr-message">{{decrypted.decrypted.decrypted_message}}</p>
+                            {% endif %}
                         </div>
                     </div>
-                </div>
-                <div class="decrypted col d-flex flex-column">
-                    <h2>Decrypted</h2>
-                    <div class="message">
-                        <h3 class="title">This is about something</h3>
-                        <p>THIS IS A MESSAGE THAT GOES OUT TO WHOEVER WANTS TO READ IT
-                            I HOPE THAT YOU ARE HAVING A NICE DAY
-                        </p>
-                    </div>
-                    <button class="btn align-self-end me-3"><img src="/static/imgs/design/decrypt_stamp.png" alt=""></button>
+                    <button onclick="submitForm()" class="btn align-self-end me-3 "><img src="/static/imgs/design/decrypt_stamp.png" alt=""></button>
                 </div>
             </div>
+            <!-- Encrypted Message / Comments -->
+        <form class="encrypted-message_comments container" action="/decrypt_message" method="POST">
+            
+            <div class="settings-full">
+                <div class="settings container">
+                    <div class="row  pb-4 d-none">
+                        <div class="col">
+                            <button id="form-submit-btn" class="visually-hidden" type="submit">Hidden button</button>
+                            <button class="visually-hidden" onclick="pullPanelSettings()">Send Transmission</button>
+                        </div>
+                    </div>
+                    <div id="enigma-settings-note" class="row d-none">
+                        <div class="col d-flex flex-column">
+                            <p class="pe-4">Enigma setup (write this down on paper)</p>
+                            <p class="pe-4">
+                                <input type="hidden" id="post_id" name="post_id" value="{{post.id}}">
+                                <span>Rotor order: <span id="rotor-order-values-dom">V I III</span> / </span>
+                                <input type="hidden" id="rotor-order-values" name="rotor_order" value="">
+                                <span>Initial position: <span id="initial-position-values-dom">B Q L</span> / </span>
+                                <input type="hidden" id="initial-position-values" name="initial_position" value="">
+                                <span>Rings: <span id="ring-values-dom">5 2 18</span> / </span>
+                                <input type="hidden" id="ring-values" name="rings" value="">
+                                <span>Key swap pairs: <span id="key-swap-values-dom">AP, BS, DE, RT, AP, BS, DE, RT, AP, BS</span></span>
+                                <input type="hidden" id="key-swap-values" name="key_swap_pairs" value="">
+                            </p>
+                        </div>
+                    </div> 
+                   
+                    
+                </div>
+            </div>
+        </form>
+        <!-- comments -->
             <div class="comment-section">
                 <img src="/static/imgs/design/divide_pen.png" alt="">
                 <h2>Comments</h2>
@@ -306,7 +357,7 @@
 
 
 
-
+    <script src="/static/js/enigmaPanel.js"></script>
     <script src="/static/js/charScramble.js"></script>
 </body>
 

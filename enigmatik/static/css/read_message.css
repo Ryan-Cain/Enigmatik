@@ -67,17 +67,17 @@ header a {
     padding: 0;
 }
 .links {
-    font-family: ImpactLabelReversed;
-    /* background-image: url('/static/imgs/design/links-plate.png'); */
+    background-image: url('/static/imgs/design/black_plastic2.jpg');
     background-color: rgb(127, 132, 135);
     padding: 5px;
     border-radius: 5px;
 }
 .links a {
-    /* color: rgb(225, 229, 232); */
-    color: white;
+    font-family: ImpactLabelReversed;
+    padding: 10px 20px;
     font-size: 24px;
-    font-weight: bolder;
+    color: white;
+    text-decoration: none;
 }
 
 /* Enigma Settings */
@@ -114,6 +114,7 @@ header a {
     border-radius: 10px;
     font-family: SpecialElite;
     font-weight: bolder;
+    /* background-color: rgb(192, 192, 192); */
 }
 
 .keys-container p {
@@ -182,6 +183,14 @@ header a {
 .encrypted, .decrypted {
     padding: 18px;
     font-weight: bold;
+    max-width: 50%;
+}
+
+.message h3,
+.message p {
+    /* word-wrap: break-word; */
+    overflow: visible;
+    
 }
 
 .comments p {
@@ -202,5 +211,6 @@ header a {
     margin: auto;
 }
 
-
-
+.encrypted-message h2 {
+    text-decoration: underline;
+}
