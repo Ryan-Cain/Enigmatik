@@ -75,6 +75,7 @@ header a {
     font-size: 30px;
     background-image: url('/static/imgs/design/button.png');
     background-size: contain;
+    padding-top: 5px;
 }
 
 .header-name {
@@ -148,4 +149,18 @@ button:focus img {
 
 .form-line {
     width: 75%;
+}
+#demo-creds {
+    padding: 28px 10px 0px 24px;
+    background-image: url(/static/imgs/design/parched_light.png);
+    background-size: cover;
+    width: 465px;
+    color: black;
+    font-weight: bold;
+    height: fit-content;
+}
+#login-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }

@@ -30,10 +30,13 @@ def create_message():
 @app.route('/submit_message', methods=['POST'])
 def submit_message():
     # print(session['user_id'])
+    userID = session.get('user_id')
+    print(userID)
     data = {
         **request.form,
-        'user_id': 29
+        'user_id': userID
     }
+    print(data)
     Post.submit_post(data)
     # return redirect('/profiles')
     return redirect('/messages')

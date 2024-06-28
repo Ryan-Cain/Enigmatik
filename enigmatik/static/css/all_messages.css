@@ -60,6 +60,7 @@ header a {
     font-size: 30px;
     background-image: url('/static/imgs/design/button.png');
     background-size: contain;
+    padding-top: 5px;
 }
 
 .header-name {

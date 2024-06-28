@@ -22,8 +22,9 @@ def submit_registration():
         'password': pw_hash
     }
     user_id = User.register_user(userInfo)
-    
+    print(user_id)
     session['user_id'] = user_id
+    print(session.get("user_id"))
     session['first_name'] = request.form['first_name']
 
     return redirect('/messages')
@@ -39,6 +40,7 @@ def submit_login():
         flash('Invalid Email/Password', 'login')
         return redirect('/')
     
+    print(user.id)
     session['user_id'] = user.id
     print('session id is ', session['user_id'])
     session['first_name'] = user.first_name

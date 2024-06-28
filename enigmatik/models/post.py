@@ -10,9 +10,9 @@ from flask import session
 class Post:
     def __init__(self, data):
         self.user_id = data['user_id']
-        self.decrypted_title = data['decrypted_title']
+        self.decrypted_title = data['decrypted_title'].replace(" ", "")
         # self.decrypted_title = " ".join(data['decrypted_title'][i : i + 4] for i in range(0, len(data['decrypted_title']), 4))
-        self.decrypted_message = data['decrypted_message']
+        self.decrypted_message = data['decrypted_message'].replace(" ", "")
         # self.decrypted_message = " ".join(data['decrypted_message'][i : i + 4] for i in range(0, len(data['decrypted_message']), 4))
         self.encrypt_title_bool = data['encrypt_title_bool']
         self.viewed_by = data['viewed_by']
@@ -23,10 +23,10 @@ class Post:
         if 'id' in data:
             self.id = data['id']
         if 'encrypted_title' in data:
-            self.encrypted_title = data['encrypted_title']
+            self.encrypted_title = data['encrypted_title'].replace(" ", "")
             # self.encrypted_title = " ".join(data['encrypted_title'][i : i + 4] for i in range(0, len(data['encrypted_title']), 4))
         if 'encrypted_message' in data:
-            self.encrypted_message = data['encrypted_message']
+            self.encrypted_message = data['encrypted_message'].replace(" ", "")
             # self.encrypted_message = " ".join(data['encrypted_message'][i : i + 4] for i in range(0, len(data['encrypted_message']), 4))
         if 'created_at' in data:
             self.created_at = data['created_at']
@@ -49,8 +49,8 @@ class Post:
         encrypted_message = machine.process_text(new_post.decrypted_message, replace_char='X')
         data = {
             **data,
-            'encrypted_title': encrypted_title,
-            'encrypted_message': encrypted_message,
+            'encrypted_title': encrypted_title.replace(" ", ""),
+            'encrypted_message': encrypted_message.replace(" ", ""),
             'key_swap_pairs': new_post.key_swap_pairs,
             'initial_position': new_post.initial_position
         }

@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Fasthand&family=Ms+Madi&family=Nothing+You+Could+Do&family=Over+the+Rainbow&display=swap" rel="stylesheet">
@@ -16,7 +15,6 @@
 </head>
 
 <body>
-
     <!-- Header -->
     <header>
         <div class="header-name">
@@ -32,7 +30,7 @@
         </div>
         <div class="links">
             <a href="/messages">Messages</a>
-            <a href="/profiles">Profiles</a>
+            <!-- <a href="/profiles">Profiles</a> -->
             <!-- <a href="#">About</a> -->
             <a href="/logout">Logout</a>
             <!-- <a href="#"><img src="/static/imgs/design/settings_wheel.png" alt="settings wheel"></a> -->
@@ -46,17 +44,17 @@
         
 
         <!-- Encrypted Message / Comments -->
-        <form class="encrypted-message_comments container" action="/submit_message" method="POST">
+        <form id="create-msg-form" class="encrypted-message_comments container" onsubmit="pullPanelSettings(), removeSpaces(e)" action="/submit_message" method="POST">
             <div class="encrypted-message row">
                 <div class="decrypted col d-flex flex-column">
                     <!-- <h2>Decrypted</h2> -->
                     <h2>New Transmission</h2>
                     <div class="message">
                         <label for="title">Title:</label>
-                        <input class="title title-left" type="text" name="decrypted_title" placeholder="enter title here..."></input>
+                        <input id="msg-title" class="title title-left" type="text" name="decrypted_title" placeholder="enter title here..."></input>
                         <p class="break"></p>
                         <label for="message">Message:</label>
-                        <input class="message-text" type="text" name="decrypted_message" placeholder="enter message here..."></input>
+                        <input id="msg-text" class="message-text" type="text" name="decrypted_message" placeholder="enter message here..."></input>
                         
                     </div>
                 </div>
@@ -82,8 +80,9 @@
                             <input type="radio" name="encrypt_title_bool" id="no" value="0">
                         </div>
                         <div class="col">
-                            <button id="form-submit-btn" class="visually-hidden" type="submit">Hidden button</button>
-                            <button onclick="pullPanelSettings()">Send Transmission</button>
+                            <!-- <button id="form-submit-btn" class="visually-hidden" type="submit">Hidden button</button> -->
+                            <!-- <button type="submit" onclick="pullPanelSettings()">Send Transmission</button> -->
+                            <button id="send-stamp" type="submit"><img src="/static/imgs/design/send-stamp.png"></button>
                         </div>
                     </div>
                     <div id="enigma-settings-note" class="row d-none">
@@ -122,9 +121,9 @@
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
                         <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="rotor-position-1">
-                            <option value="I" selected>I</option>
+                            <option value="I">I</option>
                             <option value="II">II</option>
-                            <option value="III">III</option>
+                            <option value="III" selected>III</option>
                             <option value="IV">IV</option>
                             <option value="V">V</option>
                         </select>
@@ -175,8 +174,8 @@
                     <div class="rotor-order">
                         <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="">
                             <option value="I">I</option>
-                            <option value="II">II</option>
-                            <option value="III" selected>III</option>
+                            <option value="II" selected>II</option>
+                            <option value="III">III</option>
                             <option value="IV">IV</option>
                             <option value="V">V</option>
                         </select>
@@ -226,8 +225,8 @@
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
                         <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="">
-                            <option value="I">I</option>
-                            <option value="II" selected>II</option>
+                            <option value="I" selected>I</option>
+                            <option value="II">II</option>
                             <option value="III">III</option>
                             <option value="IV">IV</option>
                             <option value="V">V</option>
@@ -279,7 +278,7 @@
 
             </div>
             <div class="plugboard col d-flex flex-column justify-content-around align-items-center">
-                <p class="rm-p">Plugboard can switch up to 10 letters</p>
+                <p class="rm-p">Plugboard can switch up to 10 pairs</p>
                 <div class="keys-container d-flex justify-content-center align-items-center">
                     <input type="hidden" id="open_pair" value=false>
                     <div class="keys-only d-flex flex-column align-items-center">

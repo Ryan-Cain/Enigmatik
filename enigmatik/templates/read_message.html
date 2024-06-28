@@ -15,7 +15,7 @@
     <title>Enigmatik | Read Message</title>
 </head>
 
-<body onload="descramblerTitle(),descramblerMessage() ">
+<body onload="addSpacesToReadMessagePage(),descramblerTitle(),descramblerMessage()">
 
     <!-- Header -->
     <header>
@@ -32,7 +32,7 @@
         </div>
         <div class="links">
             <a href="/messages">Messages</a>
-            <a href="/profiles">Profiles</a>
+            <!-- <a href="/profiles">Profiles</a> -->
             <!-- <a href="#">About</a> -->
             <a href="/logout">Logout</a>
             <!-- <a href="#"><img src="/static/imgs/design/settings_wheel.png" alt="settings wheel"></a> -->
@@ -54,9 +54,9 @@
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
                         <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="rotor-position-1">
-                            <option value="I" selected>I</option>
+                            <option value="I">I</option>
                             <option value="II">II</option>
-                            <option value="III">III</option>
+                            <option value="III" selected>III</option>
                             <option value="IV">IV</option>
                             <option value="V">V</option>
                         </select>
@@ -107,8 +107,8 @@
                     <div class="rotor-order">
                         <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="">
                             <option value="I">I</option>
-                            <option value="II">II</option>
-                            <option value="III" selected>III</option>
+                            <option value="II" selected>II</option>
+                            <option value="III">III</option>
                             <option value="IV">IV</option>
                             <option value="V">V</option>
                         </select>
@@ -158,8 +158,8 @@
                 <div class="rotor-full mx-3 d-flex flex-column justify-content-around align-items-center">
                     <div class="rotor-order">
                         <select onchange="pullPanelSettings()" class="rotor-order-value" name="rotor" id="">
-                            <option value="I">I</option>
-                            <option value="II" selected>II</option>
+                            <option value="I" selected>I</option>
+                            <option value="II">II</option>
                             <option value="III">III</option>
                             <option value="IV">IV</option>
                             <option value="V">V</option>
@@ -211,7 +211,7 @@
 
             </div>
             <div class="plugboard col d-flex flex-column justify-content-around align-items-center">
-                <p class="rm-p">Plugboard can switch up to 10 letters</p>
+                <p class="rm-p">Plugboard can switch up to 10 pairs</p>
                 <div class="keys-container d-flex justify-content-center align-items-center">
                     <input type="hidden" id="open_pair" value=false>
                     <div class="keys-only d-flex flex-column align-items-center">
@@ -289,8 +289,14 @@
                         <h2>Decrypted</h2>
                         <div class="message">
                             {% if not decrypted %}
+                            {% if post.viewed_by == 0%}
                             <h3 class="title">{{post.encrypted_title}}</h3>
                             <p>{{post.encrypted_message}}</p>
+                            {% endif %}
+                            {% if post.viewed_by != 0%}
+                            <h3 class="title">{{post.decrypted_title}}</h3>
+                            <p>{{post.decrypted_message}}</p>
+                            {% endif %}
                             {% endif %}
                             {% if decrypted %}
                             <h3 id="decr-title" class="title">{{decrypted.decrypted.decrypted_title}}</h3>
@@ -298,7 +304,9 @@
                             {% endif %}
                         </div>
                     </div>
+                    {% if post.viewed_by == 0%}
                     <button onclick="submitForm()" class="btn align-self-end me-3 "><img src="/static/imgs/design/decrypt_stamp.png" alt=""></button>
+                    {% endif %}
                 </div>
             </div>
             <!-- Encrypted Message / Comments -->
@@ -343,13 +351,11 @@
                         <p>I love this message!!</p>
                         <p>Transmitted On: <span>June 8, 2023 9:35AM</span></p>
                     </div>
-                    
                     <div class="comment">
-                        <p>By: <span class="commentor">Stephanie Cain</span></p>
-                        <p>I love this message!!</p>
-                        <p>Transmitted On: <span>June 8, 2023 9:35AM</span></p>
+                        <p>By: <span class="commentor">Abraham Lincoln</span></p>
+                        <p>Your secret is safe with me.</p>
+                        <p>Transmitted On: <span>June 10, 2023 5:35PM</span></p>
                     </div>
-                    
                 </div>
             </div>
         </div>

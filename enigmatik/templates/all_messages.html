@@ -12,7 +12,7 @@
     <title>Enigmatik | Dashboard</title>
 </head>
 
-<body>
+<body onload="addSpacesToTitles()">
 
     <!-- Header -->
     <header>
@@ -28,11 +28,10 @@
             <div class="header-button"><span>K</span></div>
         </div>
         <div class="links">
-            <a href="/messages">Messages</a>
-            <a href="/profiles">Profiles</a>
+            <!-- <a href="/messages">Messages</a> -->
+            <!-- <a href="/profiles">Profiles</a> -->
             <!-- <a href="#">About</a> -->
             <a href="/logout">Logout</a>
-            <!-- <a href="#"><img src="/static/imgs/design/settings_wheel.png" alt="settings wheel"></a> -->
         </div>
     </header>
 
@@ -67,18 +66,17 @@
                     </a>
                     <div class="d-flex justify-content-between">
                         <p>Operator: {{post.user.first_name}} {{post.user.last_name}}</p>
-                        
                         {% if post.viewed_by == 0 %}
                         <h2 class="fs-4 fw-bold text-danger">
                             PRIVATE
                         </h2>
                         {% endif %}
                     </div>
-                    {% if post.viewed_by != 0 %}
+                    <!-- {% if post.viewed_by != 0 %} -->
                     <p class="d-none decrypted-title-reveal">{{post.decrypted_title}}</p>
                     <p class="d-none decrypted-message-reveal">{{post.decrypted_message}}</p>
                     <p class="message">
-                        {% endif %}
+                        <!-- {% endif %} -->
                         {{post.enc.encrypted_message}}</p>
                         <div>
                         <!-- <p><span>4</span> comments</p> -->
@@ -86,209 +84,7 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
-
-
-
-            <!-- <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        This message is about something secret so dont ask
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        This message is about
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger"></h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">
-                        OPCUL XVBLH JSIBY VNTYD GQTSC XGGRO CLTHW LJJHL WPXTX AR</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        This message is about something secret so dont ask
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        This message is about
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger"></h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">
-                        OPCUL XVBLH JSIBY VNTYD GQTSC XGGRO CLTHW LJJHL WPXTX AR</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        This message is about something secret so dont ask
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        This message is about
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger"></h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">
-                        OPCUL XVBLH JSIBY VNTYD GQTSC XGGRO CLTHW LJJHL WPXTX AR</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 card px-2">
-                <div class="card-body">
-                    <h2 class="fs-4">
-                        This message is about something secret so dont ask
-                    </h2 >
-                    <div class="d-flex justify-content-between">
-                        <p>Operator: Ryan Cain</p>
-                        <h2 class="fs-4 fw-bold text-danger">PRIVATE</h2>
-                    </div>
-                    <p onmouseenter="scrambler(event)" class="message">angj jshu ifhy xbnd sbcj bdjc dhae sjegf
-                        lajd wueb atwj dhsf louv jvxc jfid iyrn
-                        odjc sleu shdv lsid flsl odos</p>
-                    <div>
-                        <p><span>4</span> comments</p>
-                        <p>Transmission date: <span>June 5, 2023 5:24pm</span></p>
-                    </div>
-                </div>
-            </div> -->
-
-                      
-            
-            
+            {% endfor %}            
         </div>
     </main>
 
